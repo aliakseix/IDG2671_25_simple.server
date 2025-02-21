@@ -18,3 +18,5 @@ Promise.race([appRunningPromise, timeoutPr])
     console.log("Failed app lauching tests.");
     process.exit(1); // 1 means an error happended
 });
+
+/* just some testÆ*/
