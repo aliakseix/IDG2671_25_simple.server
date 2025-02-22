@@ -3,7 +3,7 @@ import appRunningPromise from "./server.js";
 const TIMEOUT = 3000;
 
 const timeoutPr = new Promise((resolve, reject) => {
-    setTimemout(()=> {
+    setTimeout(()=> {
         reject(`server has not started in ${TIMEOUT}ms - presuming it wont start at all...`);
     }, TIMEOUT)
 });
@@ -11,7 +11,7 @@ const timeoutPr = new Promise((resolve, reject) => {
 Promise.race([appRunningPromise, timeoutPr])
 .then(app=> {
     app.close();
-    console.log("app launchin test run ok");
+    console.log("app launching test run ok");
     process.exit(0); // 0 means success
 })
 .catch(e=> {
